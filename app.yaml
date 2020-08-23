@@ -1,0 +1,11 @@
+runtime: nodejs
+env: flex
+
+#env_variables:
+#  SQL_USER: root
+#  SQL_PASSWORD: "P*ssw0rd1!"
+#  SQL_DATABASE: falconwing
+#  INSTANCE_CONNECTION_NAME: falconwing-backend:us-east4:falconwingdb
+#
+#beta_settings:
+#  cloud_sql_instances: falconwing-backend:us-east4:falconwingdb
