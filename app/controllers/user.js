@@ -62,9 +62,22 @@ exports.register = (req, res) => {
         } else {
             const hash = await bcrypt.hash(req.body.password, 10)
             const user = {
-                name: req.body.name,
                 email: req.body.email,
-                password: hash
+                password: hash,
+                first_name: req.body.first_name,
+                middle_initial: req.body.middle_initial,
+                last_name: req.body.last_name,
+                job_title: req.body.job_title,
+                address: req.body.address,
+                zip_code: req.body.zip_code,
+                city: req.body.city,
+                created_by: req.body.created_by,
+                modified_by: req.body.modified_by,
+                user_interest_id: req.body.user_interest_id,
+                country_id: req.body.country_id,
+                state_id: req.body.state_id,
+                status_id: req.body.status_id,
+                role_id: req.body.role_id
             }
             User.create(user).then(function(user) {
                 res.status(200).send({
