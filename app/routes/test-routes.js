@@ -1,10 +1,12 @@
 module.exports = app => {
     const tutorials = require("../controllers/test-controller.js");
+    const passport = require('passport')
+    const passportConf = require('../config/passport-config.js')
 
     var router = require("express").Router();
 
     // Create a new Tutorial
-    router.post("/", tutorials.create);
+    router.post("/", passport.authenticate('jwt', { session: false}), tutorials.create);
 
     // Retrieve all Tutorials
     router.get("/", tutorials.findAll);
